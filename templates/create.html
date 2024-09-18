@@ -3,5 +3,22 @@
 Create
 {% endblock %}
 {% block content %}
-<p>Create page</p>
+<form method="post" class="myForm">
+	<h3>Create drawing</h3>
+	<div>
+		<label>Name for the drawing: </label>
+		<input type="text" placeholder="Name..." name="name" value="{{name}}" />
+		<br>
+		<label>Amount of winners: </label>
+		<input type="number" name="amount" value="{{amount}}" />
+		<br>
+		<button type="submit" name="create" class="myButton">Create</button>
+	</div>
+	{% if error %}
+		<ul>
+			<li>{{error}}</li>
+		</ul>
+	{% endif %}
+
+</form>
 {% endblock %}
