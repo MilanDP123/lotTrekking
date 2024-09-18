@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Main
+{% endblock %}
+{% block content %}
+<form method="post" class="myForm">
+	<h3>New application</h3>
+	<div>
+		<label>First name: </label>
+		<input type="text" placeholder="First name..." name="first_name" value="{{first_name}}" />
+		<br>
+		<label> Last name: </label>
+		<input type="text" placeholder="Last name..." name="last_name" value="{{last_name}}" />
+
+		<br>
+		<label>Email: </label>
+		<input type="email" placeholder="Email..." name="email" value="{{email}}" />
+		<button type="submit" name="submit" class="myButton">Submit</button>
+	</div>
+	<a href="{{ url_for('trekking') }}" class="myButton">Trekking</a>
+
+	{% if error %}
+	<ul>
+		<li>{{error}}</li>
+	</ul>
+	{% endif %}
+</form>
+{% endblock %}
